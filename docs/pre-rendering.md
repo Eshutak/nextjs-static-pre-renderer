@@ -34,5 +34,10 @@ npm config set cache "D:\nvm4w\npm-cache"
 
 따라서 `getStaticPaths`라는 기능을 별도로 추가해줘야한다
 
-
+## `getStaticPaths`에 대해서 
+`fallback` 기능 설정 :
+`fallback`은 빌드시에 미리 만들지 않은 페이지를 처음 요청 받았을 때 어떻게 처리할지에 대한 전략
+ - false : fallback기능을 사용하지 않음. 따라서 사전 렌더링으로 정해놓은 slug path가 없다면 404 에러가 난다.
+ - true : fallback기능을 사용. 최초의 요청 시 빈 fallback 페이지 즉시 발행(로딩상태 페이지). 그리고 동시에 백그라운드에서 동적페이지 작성후 교체.
+ - "blocking" : fallback기능을 사용. 다만 최초요청시에도 동적페이지 작성때까지 기다림
 
