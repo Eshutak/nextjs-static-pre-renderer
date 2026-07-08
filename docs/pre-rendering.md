@@ -41,3 +41,9 @@ npm config set cache "D:\nvm4w\npm-cache"
  - true : fallback기능을 사용. 최초의 요청 시 빈 fallback 페이지 즉시 발행(로딩상태 페이지). 그리고 동시에 백그라운드에서 동적페이지 작성후 교체.
  - "blocking" : fallback기능을 사용. 다만 최초요청시에도 동적페이지 작성때까지 기다림
 
+## 동적라우트에서의 `notFound`처리
+
+`getStaticPaths`설정으로 인해 동적라우트를 대응할 수 있지만 
+path params(slug) 에 해당하는 실제데이터가 없을 경우 에러가 날 수 있다.
+
+다만 에러내용이 null 예외등이 나타나기 때문에 notFound로 제어 하는 방법을 권장
